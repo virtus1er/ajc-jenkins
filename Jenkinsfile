@@ -3,7 +3,7 @@ node {
         git branch: 'develop', url: 'https://github.com/virtus1er/ajc-jenkins.git'  
     }    
     stage('build'){
-        withMaven( maven: 'mav', jdk: 'javasdk8' ){
+        withMaven( maven: 'mav', jdk: 'jdk8' ){
             sh "mvn clean verify"
         }
         step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/*.xml'])
