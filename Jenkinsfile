@@ -1,6 +1,6 @@
 node {
     stage('Checkout'){
-        git branch: 'develop', url: https://github.com/virtus1er/ajc-jenkins.git'  
+        git branch: 'develop', url: 'https://github.com/virtus1er/ajc-jenkins.git'  
     }    
     stage('build'){
         withMaven( maven: 'mav', jdk: 'javasdk8' ){
