@@ -14,8 +14,4 @@ node {
         }
         stash name : 'binary', includes : 'target/*.jar'
     }
-    stage('Deploy'){
-        sh 'docker build -t app_jenkins .'
-        sh 'docker run -d -p 8090:8080 app_jenkins'
-    }
 }
