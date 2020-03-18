@@ -1,7 +1,14 @@
+FROM openjdk:8-jre-alpine
 
-#Dockerfile
-FROM tomcat:9.0.14-jre8-alpine
-COPY ./target/simple-app-0.1-SNAPSHOT.jar /webapps/
+RUN adduser \
+  -h /var/lib/simple-app \
+  -D \
+  simpleapp simpleapp
+
+USER simpleapp
+WORKDIR /var/lib/simple-app
 
 EXPOSE 8080
-CMD java -jar /webapps/simple-app-0.1-SNAPSHOT.jar
+ENTRYPOINT ["java", "-jar", "simple-app.jar"]
+
+ADD ./target/simple-app-*.jar simple-app.jar
