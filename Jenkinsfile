@@ -15,4 +15,7 @@ node {
         
         stash name : 'binary', includes : 'target/*.jar'
     }
+     stage('build2'){
+         
+     }
 }
