@@ -12,6 +12,7 @@ node {
         dir('target'){
             archive '*.jar'
         }
+        
         stash name : 'binary', includes : 'target/*.jar'
     }
 }
